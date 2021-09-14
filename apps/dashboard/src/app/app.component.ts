@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@astronaut-app/api-interfaces';
 
 @Component({
   selector: 'astronaut-app-root',
@@ -8,6 +6,9 @@ import { Message } from '@astronaut-app/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title= 'Astronauts in Space';
+  links= [
+    {path: '', icon: 'home', title: 'Home'},
+    {path: 'astros', icon: 'view_list', title: 'Astronauts'}
+  ]
 }

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <astronaut-app-astronaut-list
+        [persons]="allAstros$ | async"
+        (selected)="selectPerson($event)"
+        (deleted)="deletePerson($event)"
+        (personViewed)="viewPerson($event)"
+      ></astronaut-app-astronaut-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <astronaut-app-astronaut-details
+        [person]="selectedAstro$ | async"
+        (saved)="savePerson($event)"
+        (cancelled)="resetPerson()"
+        [form]="form"
+      ></astronaut-app-astronaut-details>
+    </div>
+  </div>
