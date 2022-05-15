@@ -18,6 +18,11 @@ export class AstroService {
 
   constructor(private http: HttpClient) { }
 
+  // CRUD Functions.  Please note that we only have
+  // read functions.  This is because we do not own
+  // the API. There ARE ways to perform C, U and D but
+  // we will skip this for now.
+
   getAll(): Observable<Person[]> {
     return this.http.get<AstroPagination>(this.getUrl()).pipe(
       map((response) => response.people)
